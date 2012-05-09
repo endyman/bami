@@ -1,0 +1,27 @@
+Minimum survival guide:
+
+apt-get install python-setuptools
+apt-get install virtualenvwrapper
+apt-get install git
+apt-get install build-essential
+apt-get install libxml2-dev libxslt1.1-dev
+apt-get install libyaml-dev
+apt-get install python-dev
+
+
+echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen" >> /etc/apt/sources.list
+
+
+virtualenv bami
+
+cd bami/
+. bin/activate
+
+pip install -r REQUIREMENTS.txt 
+
+cd PROJECT_ROOT
+
+./manage.py syncdb
+
+
+manage.py runserver 0.0.0.0:8080
